@@ -14,6 +14,14 @@ void generateRandomArray(int numsArr[], const int arrSize, const int maxHeight)
     }
 }
 
+void displayArray(int numsArr[], const int arrSize)
+{
+    for (int i = 0; i < arrSize; i++)
+    {
+        cout << numsArr[i] << " ";
+    }
+}
+
 void printGraph(int numsArr[], const int arrSize, const int maxHeight)
 {
     cout << endl;
@@ -82,8 +90,6 @@ void bubbleSort(int numsArr[], const int arrSize)
         }
         count++;
     } while (swap);
-
-    cout << "Number of Bubble Sort comparisons: " << count << endl;
 }
 
 void selectionSort(int numsArr[], const int arrSize)
@@ -99,7 +105,6 @@ void selectionSort(int numsArr[], const int arrSize)
         numsArr[i] = temp;
         count++;
     }
-    cout << "Number of Selection Sort comparisons: " << count << endl;
 }
 
 void merge(int *array, int start, int end, int mid)
@@ -157,4 +162,38 @@ void mergeSort(int *array, int start, int end)
         merge(array, start, end, mid);
     }
     return;
+}
+
+int partition(int numsArr[], int start, int end)
+{
+
+    int pivot = numsArr[end];
+    int i = start - 1;
+
+    for (int j = start; j <= end - 1; j++)
+    {
+        if (numsArr[j] < pivot)
+        {
+            i++;
+            int temp = numsArr[i];
+            numsArr[i] = numsArr[j];
+            numsArr[j] = temp;
+        }
+    }
+    i++;
+    int temp = numsArr[i];
+    numsArr[i] = numsArr[end];
+    numsArr[end] = temp;
+
+    return i;
+}
+
+void quickSort(int numsArr[], int start, int end)
+{
+    if (end <= start)
+        return;
+
+    int pivot = partition(numsArr, start, end);
+    quickSort(numsArr, start, pivot - 1);
+    quickSort(numsArr, pivot + 1, end);
 }

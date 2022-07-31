@@ -20,21 +20,31 @@ int main()
     int end = length - 1;
 
     generateRandomArray(numsArr, arrSize, maxHeight);
+    printGraph(numsArr, arrSize, maxHeight);
+    displayArray(numsArr, arrSize);
 
+    bubbleSort(numsArr, arrSize);
     printGraph(numsArr, arrSize, maxHeight);
 
-    /*for (int i = 0; i < arrSize; i++)
-    {
-        cout << numsArr[i] << " ";
-    } */
-
-    /*bubbleSort(numsArr, arrSize);
-    printGraph(numsArr, arrSize, maxHeight);
     generateRandomArray(numsArr, arrSize, maxHeight);
     printGraph(numsArr, arrSize, maxHeight);
+    displayArray(numsArr, arrSize);
+
     selectionSort(numsArr, arrSize);
-    printGraph(numsArr, arrSize, maxHeight); */
+    printGraph(numsArr, arrSize, maxHeight);
+
+    generateRandomArray(numsArr, arrSize, maxHeight);
+    printGraph(numsArr, arrSize, maxHeight);
+    displayArray(numsArr, arrSize);
+
     mergeSort(numsArr, start, end);
+    printGraph(numsArr, arrSize, maxHeight);
+
+    generateRandomArray(numsArr, arrSize, maxHeight);
+    printGraph(numsArr, arrSize, maxHeight);
+    displayArray(numsArr, arrSize);
+
+    quickSort(numsArr, start, end);
     printGraph(numsArr, arrSize, maxHeight);
 
     return 0;
